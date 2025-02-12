@@ -193,3 +193,18 @@ foo
 ```
 for i in range(n-1, -1, -1)
 ```
+
+### Enumerate
+
+- This function adds a counter to each item in a list or other iterable. Where each item returns with its number / index and original value at that index.
+
+```
+nums = [-1, 0, 1, 2, -1, -4]
+
+for i in enumerate(nums):
+    print(i)
+
+# this will print out
+# (0, -1)
+# (1, 0) etc
+```
