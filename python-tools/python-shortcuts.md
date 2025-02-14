@@ -208,3 +208,31 @@ for i in enumerate(nums):
 # (0, -1)
 # (1, 0) etc
 ```
+
+### Join() operation is not the same as + when concatenating letters or strings together
+
+- This function adds a counter to each item in a list or other iterable. Where each item returns with its number / index and original value at that index.
+
+```
+s = ["Hello","World"]
+res = " "
+print(res.join(s[0]))
+
+# this will actually just print out H e l l o - because you're adding the " " between the letters you give it.
+# In the more extreme example
+
+print("acbdefg".join)
+
+# this will just print out "Habcdefgeabcdefgl..." - where there is a abcdefg in between each portion.
+
+```
+
+### queues
+- deque stands for double-ended queue. 
+
+
+```
+from collections import deque
+
+
+```
