@@ -232,7 +232,32 @@ print("acbdefg".join)
 
 
 ```
-from collections import deque
+# to instantiate a queue
+q = collections.deque()
 
+# removes the first element from the queue making it FIFO as opposed to pop(), removing the last element on the right, which is LIFO
+q.popleft()
+```
 
+### float is_integer()
+
+```
+1.5.is_integer()
+# False
+
+1.0.is_integer()
+# True
+
+```
+
+### Splicing in Python
+- to begin, indexing is the process of accessing an element in a sequence using its position in the sequence.
+- Splicing, however, is the process of accessing a subsequence of a sequence by specifying a starting and ending index
+
+```
+sentence = "The quick brown fox jumps over the lazy dog"
+first_word = sentence[:3]
+print(first_word) # output: "The"
+
+# remember that the [:3] syntax means that we include everything from the start of the string up until 3 (excluding 3)
 ```
