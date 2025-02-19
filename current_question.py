@@ -3,6 +3,6 @@
 
 s = [11, 13, 15, 17]
 
-mid = (0 + 3) // 2
+new = s[0:0] + s[1:4]
 
-print(s[mid])
+print(new)
