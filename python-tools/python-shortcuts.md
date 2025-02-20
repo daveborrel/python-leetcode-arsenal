@@ -261,3 +261,58 @@ print(first_word) # output: "The"
 
 # remember that the [:3] syntax means that we include everything from the start of the string up until 3 (excluding 3)
 ```
+
+### Operator module
+
+```
+import operator
+
+s = ["+", 1]
+
+op = {"+": operator.add, "-": operator.sub , "*": operator.mul, "/": operator.floordiv}
+
+val = op[s[0]] (s[1], 2)
+
+print(val)
+```
+
+### Difference between int(a,b) and a//b
+
+```
+a = 5
+b = 2
+
+# float division - 2.5
+print(a/b)
+
+# floor division - 2
+print(a//b)
+
+# truncation towards 0 - which means to chop off the decimal portion of a number.
+print(int(a/b))
+```
+
+Using a more specific example for [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/)
+
+However, we run into a special case when looking at negative numbers:
+
+-9 / 5 = ? (-1.8)
+
+Most programming languages will will either do one of the following
+- make it smaller by rounding to -2.
+- make it closer to 0.
+
+This is where int will do the trick
+
+```
+print(-9/5)
+# returns -1.8
+
+print(int(-9 / 5))
+# returns -1 - closer to 0
+
+print(-9 // 5)
+# returns -2 - makes it smaller
+
+```
+
