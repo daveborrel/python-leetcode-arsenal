@@ -316,3 +316,8 @@ print(-9 // 5)
 
 ```
 
+### Lambda Functions
+```
+
+```
+
