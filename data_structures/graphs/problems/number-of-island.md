@@ -2,7 +2,7 @@
 
 - This combines the technique of traversing a 2d array and graph traversal.
 
-![image](/algorithms/graph/problems/asset/islands.png)
+![image](/data_structures/graphs/asset/islands.png)
 
 ## DFS Approach
 
