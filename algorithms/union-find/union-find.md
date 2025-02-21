@@ -77,7 +77,7 @@ def find_with_path_compression(v):
     - return 1
 
 ![Image](/algorithms/union-find/assets/path_compression_1.JPG)
-![Image](/algorithms/union-find/assets/path_compression_1.JPG)
+![Image](/algorithms/union-find/assets/path_compression_2.JPG)
 
 ### Union By Rank
 
