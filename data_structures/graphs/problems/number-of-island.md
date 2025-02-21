@@ -1,6 +1,10 @@
 # Number of Islands
 
 - This combines the technique of traversing a 2d array and graph traversal.
+- When using DFS
+    - think in recursions and not loops
+    - mark visited before exploring anything else
+    - check if the current cell is invalid or not - if it is, return it ASAP.
 
 ![image](/data_structures/graphs/asset/islands.png)
 
@@ -116,33 +120,8 @@ class Solution:
 
 ## Union Find Approach
 
+- We union each island cell if the neighbor is also an island to form an island.
+- We need to create a UnionFind class here.
+
 ```
-class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-        
-        rows = len(grid)
-        cols = len(grid[0])
-
-        parent[[] * cols for _ in range(rows)]
-
-        # creating a 2d array
-        for i in rows:
-            for j in cols:
-
-                # inside each square, the coordinates will be the parent
-                parent[i][j].append((i, j))
-
-        def find(x):
-            if not x == parent[x]:
-                return find(parent[x])
-            return x
-
-        def union(v1, v2):
-            parent[v2] == find(v1)
-        
-        # connect all the disjoint sets - but how do we find all the distinct sets?
-        for i in rows:
-            for j in cols:
-
-                # but what are we joining? with each coordinate how do we connect it going sideways?
 ```
