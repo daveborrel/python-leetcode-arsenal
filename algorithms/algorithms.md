@@ -10,7 +10,7 @@
 - [dfs](/algorithms/dfs/depth-first-search.md)
 - [dp](/algorithms/dp/)
 - [graph](/algorithms/graph/)
-- [sliding-window](/algorithms/sliding-window/)
+- [sliding-window](/algorithms/sliding-window/sliding-window.md)
 - [sorting](/algorithms/sorting/)
 - [two-pointers](/algorithms/two-pointers/two-ptr-vs-sliding-window.md)
 - [union find](/algorithms/union-find/union-find.md)
