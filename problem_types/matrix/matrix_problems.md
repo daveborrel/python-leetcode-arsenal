@@ -2,7 +2,7 @@
 
 - Creating 2D arrays can have their own gotchas.
 
-```
+```python
 # you need to create a new list for each row
 seen = [[0] * cols for _ in range(rows)]
 ```

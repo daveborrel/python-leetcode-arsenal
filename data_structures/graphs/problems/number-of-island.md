@@ -15,7 +15,7 @@
 - attempt #1 this fails because
     - you're doing a nested loop inside of dfs which defeats the purpose of doing a dfs
 
-```
+```python
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         rows = len(grid)
@@ -50,7 +50,7 @@ class Solution:
 
 - Even in this version, if you use the passed in parameters like r and c, you're still doing a grid search which is not dfs.
 
-```
+```python
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         rows = len(grid)
@@ -85,7 +85,7 @@ class Solution:
 
 - Proper DFS
 
-```
+```python
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         rows = len(grid)
@@ -125,7 +125,7 @@ class Solution:
 - We union each island cell if the neighbor is also an island to form an island.
 - We need to create a UnionFind class to create find and union functions.
 
-```
+```python
 class UnionFind:
     def __init__(self,n):
         self.parent = [i for i in range(n)]
@@ -186,7 +186,7 @@ Given an example grid
 
 Following this code
 
-```
+```python
 if grid[i][j] == "1":
     count += 1
 
@@ -217,7 +217,7 @@ Which means that for any multiple of 3 in the 1D array represents a row in the o
 
 Then taking the next code snippet:
 
-```
+``` python
 if i + 1 <= m - 1 and grid[i+1][j] == "1":
     x2 = x1 + n
     count -= uf.union(x1, x2)

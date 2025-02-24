@@ -21,7 +21,7 @@ Method 1 - `while end < len(arr)`
 
 [Example In LeetCode 567](/algorithms/sliding-window/lc-567-permutation-in-string-template.py)
 
-```
+```python
 def fixed_window_while_modifying_size_concurrently(sequence, k):
     start, end = 0, 0
     window_size = k
@@ -46,7 +46,7 @@ Method 2 - `for end in range(len(arr))`
 
 [Example In LeetCode 567](/algorithms/sliding-window/lc-567-permutation-in-string-for-loop.py)
 
-```
+```python
 def fixed_window_after_checking_it_first(sequence, k):
     window_size = k
 
@@ -66,7 +66,7 @@ For Method 2, there is a way to use a start and end pointer to make it more expl
 
 #### Variable Window Psudocode
 
-```
+```python
 def variable_window_size(sequence):
     start, end = 0, 0
     while end < range(len(sequence)):
@@ -98,7 +98,7 @@ def variable_window_size(sequence):
 
 
 
-```
+```python
 def sliding_window_template(arr):
     # 1. Initialize window variables
     window_start = 0

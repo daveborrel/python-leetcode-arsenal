@@ -4,13 +4,13 @@
 - "Anonymous" in this context, simply means that this function does not have a name.
 
 Standard function definition
-```
+```python
 >>> def identity(x):
 ...     return x
 ```
 
 Defining and using a lambda function
-```
+```python
 lambda x: x + 1
 
 # 2 will be the argument and this will print out 3

@@ -18,7 +18,7 @@ In [LC684: Redundant Connection ](https://leetcode.com/problems/redundant-connec
 - If we used `range(n)` whenever we get a edge with node n we would need to subtract 1 to get its parent.
 - By using `range(n+1)` we can have direct mapping of node labels to indices.
 
-```
+```python
 # If n = 3, nodes are labeled 1, 2, 3
 self.parent = list(range(4))  # [0, 1, 2, 3]
 # Index 0 is unused
@@ -27,7 +27,7 @@ self.parent = list(range(4))  # [0, 1, 2, 3]
 # Node 3 uses index 3
 ```
 
-```
+```python
 N = len(edges)
 parents = [i for i in range(N + 1)]
 rank = [1] * (N + 1)
@@ -45,7 +45,7 @@ Grid coordinates:       Mapped to linear indices:
 ```
 
 
-```
+```python
 def __init__(self, n):
     self.parent = [i for i in range(n)]
     self.rank = [1] * n
@@ -56,7 +56,7 @@ def __init__(self, n):
 
 Find function without path compression
 
-```
+```python
 def find(v):
     if v != parent[v]:
         return find(parent[v])
@@ -65,7 +65,7 @@ def find(v):
 
 Find function with path compression
 
-```
+```python
 def find_with_path_compression(v):
     if v != parent(v):
         return parent[v] = find_with_path_compression(parent[v])
@@ -83,12 +83,12 @@ def find_with_path_compression(v):
 
 - Here we are deciding which tree gets attached to which depending on the size of the tree.
 
-```
+```python
 def union(v1, v2):
     parent[find(v2)] = find(v1)
 ```
 
-```
+```python
 def union(v1, v2):
     p1, p2 = find(v1), find(v2)
     

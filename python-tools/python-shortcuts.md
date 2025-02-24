@@ -190,7 +190,7 @@ foo
     - stop - where to end (exclusive)
     - step - how much to increment/ decrement by
 
-```
+``` python
 for i in range(n-1, -1, -1)
 ```
 
@@ -198,7 +198,7 @@ for i in range(n-1, -1, -1)
 
 - This function adds a counter to each item in a list or other iterable. Where each item returns with its number / index and original value at that index.
 
-```
+```python
 nums = [-1, 0, 1, 2, -1, -4]
 
 for i in enumerate(nums):
@@ -213,7 +213,7 @@ for i in enumerate(nums):
 
 - This function adds a counter to each item in a list or other iterable. Where each item returns with its number / index and original value at that index.
 
-```
+```python
 s = ["Hello","World"]
 res = " "
 print(res.join(s[0]))
@@ -231,7 +231,7 @@ print("acbdefg".join)
 - deque stands for double-ended queue. 
 
 
-```
+```python
 # to instantiate a queue
 q = collections.deque()
 
@@ -241,7 +241,7 @@ q.popleft()
 
 ### float is_integer()
 
-```
+```python
 1.5.is_integer()
 # False
 
@@ -254,7 +254,7 @@ q.popleft()
 - to begin, indexing is the process of accessing an element in a sequence using its position in the sequence.
 - Splicing, however, is the process of accessing a subsequence of a sequence by specifying a starting and ending index
 
-```
+```python
 sentence = "The quick brown fox jumps over the lazy dog"
 first_word = sentence[:3]
 print(first_word) # output: "The"
@@ -264,7 +264,7 @@ print(first_word) # output: "The"
 
 ### Operator module
 
-```
+```python
 import operator
 
 s = ["+", 1]
@@ -278,7 +278,7 @@ print(val)
 
 ### Difference between int(a,b) and a//b
 
-```
+```python
 a = 5
 b = 2
 
@@ -304,7 +304,7 @@ Most programming languages will will either do one of the following
 
 This is where int will do the trick
 
-```
+```python
 print(-9/5)
 # returns -1.8
 

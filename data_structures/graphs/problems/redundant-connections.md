@@ -4,7 +4,7 @@
 
 ### DFS
 
-```
+```python
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
         
@@ -60,7 +60,7 @@ class Solution:
 
 Disjoint Set with Path Compression and Union By Rank
 
-```
+```python
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
         N = len(edges)
@@ -100,7 +100,7 @@ class Solution:
 
 Disjoint set without path compression or union by rank
 
-```
+```python
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
         N = len(edges)
