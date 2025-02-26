@@ -1,4 +1,4 @@
-# Dynamic Programming
+# 1D - Dynamic Programming
 
 Dynamic Programming helps us solve problems by relating it to smaller subproblems.
 

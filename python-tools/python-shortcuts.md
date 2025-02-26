@@ -100,6 +100,9 @@ my_map = {
 - to create a maxHeap - you can just push into the heap by multiplying each value by -1 and then multiplying it by -1 again once you need the values.
 
 ```python
+
+import heapq
+
 s = []
 
 heapq.heapify(x)
