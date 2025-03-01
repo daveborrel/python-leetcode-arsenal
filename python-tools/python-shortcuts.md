@@ -324,3 +324,6 @@ print(-9 // 5)
 
 ```
 
+### Try and Except Blocks
+
+[Best Practices](https://python.land/deep-dives/python-try-except)

@@ -41,3 +41,8 @@
 - Database Scaling
 - Microservices architecture if possible
 - Planning for future extensibility
+
+
+# Tips to make you stand out
+
+
