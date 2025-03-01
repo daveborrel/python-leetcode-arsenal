@@ -23,6 +23,8 @@ This recurrence describes the relationship of any coordinate (i,j) with the poin
 2. Recurrence Relation - A way to transition between the states.
 3. Base Case.
 
+### Examples of these questions.
+
 Using [LeetCode 300: Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/description/) as an example:
 
 1. We'll setup `dp = [1,1,1]` which represents the LIS that ends with the ith element.
@@ -38,3 +40,18 @@ Using [LeetCode 53: Maximum Subarray](https://leetcode.com/problems/maximum-suba
     - This is the main reason why we can't use the greedy approach because we can't simply 
     ignore the negative values because adding the negative could result in a larger value.
 3. The base case is 0 as initiated in the original dp array
+
+Usign [Coin Change](https://leetcode.com/problems/coin-change/description/)
+
+1. The DP array represents the minimum number of coins at that coin amount. The default value will be `amount + 1` because you might not be able to make a combination.
+2. dp[i] = min(dp[i], dp[i-coin] + 1) for coin in coins.
+    - To avoid running into an IndexError we check if coin > i before doing the comparison.
+3. base case is 0.
+
+## Comparison with Greedy Approaches
+
+Its easy to confuse the two because they both break down the larger problem into smaller ones.
+
+Greedy Approach - Will take the best solution at each step but miss the global solution.
+
+Dynamic Programming - Uses the results of smaller subproblems to solve large problems.
