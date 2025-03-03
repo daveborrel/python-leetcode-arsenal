@@ -43,6 +43,17 @@
 - Planning for future extensibility
 
 
-# Tips to make you stand out
+# Things to remember on future questions
 
+### Singleton Pattern
+- Useful when there should only be a single instance of an object
 
+### Enumerations
+- Helpful if there are certain types of objects
+
+### Interfaces
+- Vehicles?
+
+### Consistency
+- Can't have two people changing the lot at the same time
+- Threading?

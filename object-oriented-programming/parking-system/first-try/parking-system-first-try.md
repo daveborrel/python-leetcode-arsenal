@@ -30,6 +30,11 @@
     - Get Spots
     - Park Vehicle
 
+- Parking Spot
+- Fields
+    - Type
+    - Vehicle in Spot
+
 - Vehicle
     - Type
 
@@ -40,6 +45,10 @@
 
 ## Scalability
 
+- How do we scale this?
+    - More vehicles at one time?
+- Maybe we need to see how much they have been parked for?
+- Payments?
 
 ### Resources
 [Solution](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/parking-lot.md)
