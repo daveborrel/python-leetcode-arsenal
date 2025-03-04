@@ -7,3 +7,19 @@
 # Solution
 # (1) - Make the default constructor private
 # (2) - Create a static creation method that acts as a constructor. This will call the private constructor and create an object in a field.
+
+# Python implementation
+# (1) - __new__ is a class function that handles creating a new instance
+
+class Singleton:
+    _instance = None
+    
+    def __new__(cls, example_text_field, example_list_field):
+        if cls._instance is None:
+            cls._instance = Singleton()
+            
+            cls.example_text_field = example_text_field
+            cls.example_list_field = example_list_field
+        else:
+            return cls._instance
+            

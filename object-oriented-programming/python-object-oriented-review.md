@@ -1,5 +1,53 @@
 # Classes and Objects Review
 
+## Difference between __new__ and __init__
+
+`__init__`
+- an instance method
+- initializing a newly created instance (object) of a class
+- takes object as the argument
+
+`__new__` 
+- is a static method
+- responsible for creating and returning a new instance of the class.
+
+
+- In this example, we can see that new is called before init.
+
+```python
+class Person:
+    def __new__(cls, name, age):
+        print("Creating a new Person object")
+        instance = super().__new__(cls)
+        return instance
+
+    def __init__(self, name, age):
+        print("Initializing the Person object")
+        self.name = name
+        self.age = age
+
+person = Person("John Doe", 30)
+print(f"Person's name: {person.name}, age: {person.age}")
+
+# Creating a new Person object
+# Initializing the Person object
+# Person's name: John Doe, age: 30
+```
+
+So if we wanted to create the singleton approach:
+```python
+class Singleton:
+
+    _instance = None
+
+    def __new__(cls):
+        if cls.instance is None:
+            cls._instance = super(Singleton, cls).__new__(cls)
+            cls._instance.stored_food = []
+        return cls._instance
+```
+
+## Types
 In python classes there are no explicit types in the fields just based off the way python is structured.
 
 ```python
@@ -62,7 +110,8 @@ class ParkingLot:
 
 ## Error Handling
 
-
+## Main Function
+[Why we need this if statement guard](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
 
 ### Try and Except Blocks
 [Best Practices](https://python.land/deep-dives/python-try-except)
