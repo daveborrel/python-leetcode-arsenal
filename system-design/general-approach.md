@@ -92,6 +92,8 @@ Microserves - a collection of small, autonomous
 
 ![image](/system-design/assets/tinyURL.png)
 
+![image](/system-design/assets/bitly.JPG)
+
 #### Notification System
 
 ![image](/system-design/assets/notificationm.png)
