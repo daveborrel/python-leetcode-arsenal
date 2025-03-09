@@ -7,4 +7,6 @@
 - [Python Shortcuts](/python-tools/python-shortcuts.md)
 - [Data Structures and Implementations](/data_structures/data-structures.md)
 - [Algorithms](/algorithms/algorithms.md)
+- [Design Patterns](/design-patterns/design-patterns.md)
+- [System Design](/system-design/general-approach.md)
 - [General Software Engineering](/general_swe/swe.md)

@@ -320,7 +320,8 @@ print(-9 // 5)
 ```
 
 ### Lambda Functions
-```
-
+[more detail here](/python-tools/lamdba-functions.md)
+```python
+lambda x: x + 1
 ```
 
