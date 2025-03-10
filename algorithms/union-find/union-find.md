@@ -1,30 +1,49 @@
 # Disjoint Set / Union Find
 
-A Disjoint Set keeps track of a set fo elements partitioned into a number o disjoint sets (intersection of any two sets is null)
+A Disjoint Set keeps track of a set fo elements partitioned into a number o disjoint sets (intersection of any two sets is null).
 
-We can represent disjoint sets as trees
+We can represent disjoint sets as trees.
 
 ![Image](/algorithms/union-find/assets/disjoint%20sets.JPG)
 
-There are two possible operations
-- Union: Merging two sets into one.
-- Find: Determines which subset a particular element belongs to.
+In the leftmost case, where each disjoint set contains 1 element, each disjoint set's representative is itself.
 
-### Setting up the parents array
+![image](/algorithms/union-find/assets/union_find_parents_1.png)
+
+![image](/algorithms/union-find/assets/union_find_parents_2.png)
+
+## Setting up Parents Array
+
+We often use a parents array to represent the parents of each disjoint set.
+
+### Different Ways to Instantiate Parents Array
 
 In [LC684: Redundant Connection ](https://leetcode.com/problems/redundant-connection/description/)
 
-- In this problem the nodes are labelled from 1 to n, and not 0 to n-1.
+We have these graph nodes.
+
+![image](/algorithms/union-find/assets/redundant%20connection.jpg)
+
+We can use a single parents array to represent the parents of each node. The issue here is that the nodes are labelled from `1 to n`, instead of `0 to n-1`. Meaning, we would need to make a parents array 1 element larger than the range of nodes in order to let its index in the parents array match up with its actual node value.
+
 - If we used `range(n)` whenever we get a edge with node n we would need to subtract 1 to get its parent.
 - By using `range(n+1)` we can have direct mapping of node labels to indices.
 
 ```python
-# If n = 3, nodes are labeled 1, 2, 3
-self.parent = list(range(4))  # [0, 1, 2, 3]
+N = 4
+self.parent = list(range(N))  # [0, 1, 2, 3]
+# Index 0 is unused
+# Node 1 uses index 0
+# Node 2 uses index 1
+# Node 3 uses index 2
+# Node 4 uses index 3 --> This would be annoying as we need to account for that -1 different in each.
+
+self.parent = list(range(N + 1))  # [0, 1, 2, 3, 4]
 # Index 0 is unused
 # Node 1 uses index 1
 # Node 2 uses index 2
 # Node 3 uses index 3
+# Node 4 uses index 4 --> With this adjusted approach we can use the node to index itself.
 ```
 
 ```python
@@ -35,20 +54,79 @@ rank = [1] * (N + 1)
 
 In [LC200: Number of Islands](https://leetcode.com/problems/number-of-islands/description/)
 
+In this problem, we need to figure out a way to map the 2D grid into a 1D parents array.
+
+We can use this formula `r * cols + c` to do that conversion.
+- `r * cols` - Slides the "window" over to correct row
+- `+ c` - within that correct, "window"
+
+![image](/algorithms/union-find/assets/2dgrid_into_1dparent_array.jpg)
+
 - We can use `range(n)` because its easier to map each grid cell to an index from 0 to (m*n)-1
 
 ```
-Grid coordinates:       Mapped to linear indices:
-(0,0) (0,1) (0,2) (0,3)    0     1     2     3
-(1,0) (1,1) (1,2) (1,3) -> 4     5     6     7
-(2,0) (2,1) (2,2) (2,3)    8     9    10    11
+Grid coordinates:   Mapped to linear indices:
+(0,0) (0,1) (0,2)    0     1     2     
+(1,0) (1,1) (1,2) -> 3     4     5     
+(2,0) (2,1) (2,2)    6     7     8    
 ```
 
+Which results in this type of constructor
+- Where we instantiate `parent` and `rank` array as empty arrays at first.
 
 ```python
-def __init__(self, n):
-    self.parent = [i for i in range(n)]
-    self.rank = [1] * n
+    def __init__(self, grid):
+        self.count = 0
+        m, n = len(grid), len(grid[0])
+        self.parent = []
+        self.rank = []
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == "1":
+                    self.parent.append(i * n + j)
+                    self.count += 1
+                else:
+                    self.parent.append(-1)
+                self.rank.append(0)
+```
+
+Lets say we have this map of islands,
+
+```
+[[1,1,0],
+ [1,0,0],  
+ [0,0,1]]
+```
+
+After instantiating the array using the code from above, our parents array should look like:
+
+```
+[0,1,-1,3,-1,-1,-1,-1,8]
+```
+
+## Union Find Operations
+
+There are two possible operations when working with these disjoint sets.
+
+### Find: Determines which subset a particular element belongs to.
+
+```
+int find_set(int v) {
+    if (v != parent[v])
+        return v
+    return find(parent[v])
+}
+```
+
+### Union: Merging two sets into one.
+
+```
+void union(int a, int b) {
+    parent_a = find(a)
+    parent_b = find(b)
+    if (a != b)
+        parent[b] = a
+}
 ```
 
 
