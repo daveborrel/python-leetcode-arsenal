@@ -1,31 +1,9 @@
 # Just a random python file for any testing you might have
 # Think of this as replit
 
-class Solution:
-    def generateParenthesis(self, n: int) -> list[str]:
-        
-        n = 3
-        res = []
-        self.current_combination = ""
+position = [10,8,0,5,3]
+speed = [2,4,1,1,3]
 
-        def dfs(left_count, right_count):
-            if (left_count + right_count) == 2*n:
-                res.append(self.current_combination)
-                return
-            
-            if left_count < n:
-                self.current_combination = self.current_combination + "("
-                dfs(left_count + 1, right_count)
-                self.current_combination = self.current_combination[:-1]
-            
-            if left_count > right_count:
-                self.current_combination = self.current_combination + ")"
-                dfs(left_count, right_count + 1)
-                self.current_combination = self.current_combination[:-1]
-        
-        dfs(0, 0)
-        return res
-    
-    
-s = Solution()
-print(s.generateParenthesis(3))
+res = list(zip(position, speed))
+
+print(sorted(res)[::-1])

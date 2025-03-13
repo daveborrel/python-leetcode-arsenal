@@ -12,6 +12,10 @@ for i in range(N):
 
 ### Sorted
 
+- Returns the list in ascending order
+
+[More detail here](https://docs.python.org/3/library/functions.html#sorted)
+
 ```python
 a = ("b", "g", "a", "d", "f", "c", "h", "e")
 x = sorted(a)
@@ -323,5 +327,22 @@ print(-9 // 5)
 [more detail here](/python-tools/lamdba-functions.md)
 ```python
 lambda x: x + 1
+```
+
+### Zip
+
+- Takes two iterables (lists in most cases) and returns them in a single tuple.
+
+[more detail here](https://www.programiz.com/python-programming/methods/built-in/zip)
+```python
+position = [10,8,0,5,3]
+speed = [2,4,1,1,3]
+
+res = list(zip(position, speed))
+
+print(res)
+
+# prints out
+# [(10, 2), (8, 4), (0, 1), (5, 1), (3, 3)]
 ```
 
