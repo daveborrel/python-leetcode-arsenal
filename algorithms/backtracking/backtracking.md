@@ -36,7 +36,7 @@ def backtrack(x)
 
 ### Subsets Backtracking Pattern
 
-- In this problem you always 
+- Each number is either chosen, or omitted which explains why the index increases each time.
 
 ```python
 def SubsetBacktrack(index):
@@ -56,6 +56,7 @@ def SubsetBacktrack(index):
 
 ### Combination Sum Backtracking Pattern
 
+- Each number could potentially be used multiple times. This explains why the recursion goes as deep as it can with repeated numbers before exiting to the next number.
 
 ```python
 def CombinationBacktrack(index):
@@ -77,7 +78,7 @@ def CombinationBacktrack(index):
 
 ### Generate Parenthesis
 
-- We use two different counts here because it ensures that the string generated is valid.
+- Two different counts here because it ensures that the string generated is valid.
 
 ```python
 def dfs(index):
@@ -98,6 +99,46 @@ def dfs(index):
         dfs(lc, rc + 1)
         # remove open parenthesis
 ```
+
+### Combination Sum II
+
+- An extension of combination sum.
+- Need to cover the case of duplicate answers
+- Need to reduce the use of sum() and calculate the sum as you are traversing the different possibilities.
+
+Note on recursion
+- `if i > idx and candidates[i] == candidates[i - 1]:` 
+- The purpose of this line prevents duplicate numbers at the same recursion level
+    - recursion level 1 with `path = [1]`
+        - this will explore all combinations excluding `path = [1,1]` because we've already explored that in a deeper level
+    - recursion level 2 with `path = [1, 1]`
+        - we explore all possible combinations starting with `path = [1,1]`
+    - Even more context
+        - Lets say we had `candidates = [1,1,1,2,5,6,7]`
+        - This means that at recursion level 3, we'll have `path = [1,1,1]`
+            - so by the time we exit into recursion level 2, we'll skip out on `path = [1,1,1]` because its been done before.
+
+
+```python
+        def dfs(idx, path, cur):
+            if cur == target:
+                res.append(path.copy())
+                return
+            for i in range(idx, len(candidates)):
+                # checks if duplicate for that level of recursion.
+                if i > idx and candidates[i] == candidates[i - 1]:
+                    continue
+                if cur + candidates[i] > target:
+                    break
+
+                path.append(candidates[i])
+                dfs(i + 1, path, cur + candidates[i])
+                path.pop()
+```
+
+### Additional Sources
+[Leetcode Explore Card](https://leetcode.com/explore/learn/card/recursion-ii/472/backtracking/2654/)
+
 
 ### References for Images
 
