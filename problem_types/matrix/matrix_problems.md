@@ -1,8 +1,14 @@
-# Matrix Problems
+# 2D Matrix Problems
 
 These problems end up being an implicit graph problem using DFS or BFS. There will often be an extension to one of the 1d solutions you've come across.
 
+You will have a `grid` that is represented by list of lists. Where each list represents a `row` and each element within it representing a `row` and `col` coordinate.
+
+![Image](/problem_types/matrix/assets/2d%20grid.JPG)
+
 ## Solution Structure
+
+Regardless of the problem type, you'll have this structure.
 
 ```python
 # create the dimensions

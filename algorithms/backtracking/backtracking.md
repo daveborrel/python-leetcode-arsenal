@@ -136,6 +136,27 @@ Note on recursion
                 path.pop()
 ```
 
+### Letter Combinations of a phone number
+[LC Question 17](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
+
+Generating all the combinations based on an old phone keypad with 9 digits.
+
+```python
+        def dfs(curr):
+            if curr == len(digits):
+                combined = ""
+                for c in current_combination:
+                    combined += c
+                res.append(combined)
+                return
+
+            # For each digit, there are 3-4 letters associated with it
+            for letter in digit_mapping[digits[curr]]:
+                current_combination.append(letter)
+                dfs(curr+1)
+                current_combination.pop()
+```
+
 ### Additional Sources
 [Leetcode Explore Card](https://leetcode.com/explore/learn/card/recursion-ii/472/backtracking/2654/)
 
