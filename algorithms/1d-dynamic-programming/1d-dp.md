@@ -32,6 +32,8 @@ Using [LeetCode 300: Longest Increasing Subsequence](https://leetcode.com/proble
     - This explains why we decide between the maximum between dp[3] or d[2] + 1
 3. The LIS on each element alone is 1
 
+![Image](/algorithms/1d-dynamic-programming/assets/lis_dp.JPG)
+
 Using [LeetCode 53: Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
 1. `dp = [0, 0, 0]` will represent the maximum value of the subarray that ends at index i.
@@ -41,12 +43,27 @@ Using [LeetCode 53: Maximum Subarray](https://leetcode.com/problems/maximum-suba
     ignore the negative values because adding the negative could result in a larger value.
 3. The base case is 0 as initiated in the original dp array
 
-Usign [Coin Change](https://leetcode.com/problems/coin-change/description/)
+![Image](/algorithms/1d-dynamic-programming/assets/maximum_subarray_dp.JPG)
+
+Using [Coin Change](https://leetcode.com/problems/coin-change/description/)
 
 1. The DP array represents the minimum number of coins at that coin amount. The default value will be `amount + 1` because you might not be able to make a combination.
 2. dp[i] = min(dp[i], dp[i-coin] + 1) for coin in coins.
     - To avoid running into an IndexError we check if coin > i before doing the comparison.
 3. base case is 0.
+
+![Image](/algorithms/1d-dynamic-programming/assets/coin_change_dp.JPG)
+
+Using [Word Break](https://leetcode.com/problems/word-break/description/)
+
+1. `dp[i] = [True, False, False]` respresents if that current substring can be segmented into words from the wordDict
+2. `dp[i] = any(dp[i - len(word)] and s[i - len(word):i] == word for word in wordDict)`
+    - In plain english
+        - `s[i - len(word) : i] == word` does the substring from i - len(word) match a word in wordDict
+        - `dp[i - len(word)]` can everything before this word be word breakable?
+3. Empty string is breakable `dp[0] = True`
+
+![Image](/algorithms/1d-dynamic-programming/assets/word_break_dp.JPG)
 
 ## Comparison with Greedy Approaches
 
