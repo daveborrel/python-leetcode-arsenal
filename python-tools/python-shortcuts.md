@@ -346,3 +346,7 @@ print(res)
 # [(10, 2), (8, 4), (0, 1), (5, 1), (3, 3)]
 ```
 
+### Set intersection
+```python
+intersect = len(elems[i] & elems[j])
+```

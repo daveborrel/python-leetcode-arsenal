@@ -16,6 +16,12 @@ In the leftmost case, where each disjoint set contains 1 element, each disjoint 
 
 We often use a parents array to represent the parents of each disjoint set.
 
+## Type of Questions that Warrant a DSU
+
+1. **Connected Components** - If a problem explicitly asks for the number of connected components, then we can just combine sets.
+2. **Undirected Graph** - No directionality is needed
+3. **No need for querying** the graph.
+
 ### Different Ways to Instantiate Parents Array
 
 In [LC684: Redundant Connection ](https://leetcode.com/problems/redundant-connection/description/)
@@ -108,24 +114,25 @@ After instantiating the array using the code from above, our parents array shoul
 
 There are two possible operations when working with these disjoint sets.
 
-### Find: Determines which subset a particular element belongs to.
+### 1. Find: Determines which subset a particular element belongs to.
 
-```
-int find_set(int v) {
+```python
+def find_set(int v) {
     if (v != parent[v])
-        return v
-    return find(parent[v])
+        return find(parent[v])
+    return v
 }
 ```
 
-### Union: Merging two sets into one.
+### 2. Union: Merging two sets into one.
 
-```
-void union(int a, int b) {
+```python
+def union(int a, int b) {
     parent_a = find(a)
     parent_b = find(b)
     if (a != b)
         parent[b] = a
+    return
 }
 ```
 
