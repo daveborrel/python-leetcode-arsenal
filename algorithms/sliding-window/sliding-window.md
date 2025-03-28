@@ -69,7 +69,7 @@ For Method 2, there is a way to use a start and end pointer to make it more expl
 ```python
 def variable_window_size(sequence):
     start, end = 0, 0
-    while end < range(len(sequence)):
+    while end < len(sequence):
 
         if (end - start + 1 < k):
 

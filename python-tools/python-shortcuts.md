@@ -119,15 +119,30 @@ heapq.heappush(heap)
 # pops off the heap
 ```
 
-### Using get to increment the counter faster in Python
+### Using get function in dictionaries avoids having to set up an if / else case to check if the key exists or not.
 
 ```python
 freq = {}
 
-freq = freq.get(nums[i], 0) + 1
+freq[nums[i]] = freq.get(nums[i], 0) + 1
 # get will look up the array nums[i] and see if it is in the array
 # if it doesn't exist return 0
 # in this case, it doesn't exist it returns 0, but you'll increment it by one since its the first time you've seen it.
+```
+
+Its possible to return the sum of the values in a dictionary
+
+```python
+t = "ABC"
+
+count_map = {}
+
+for char in t:
+    count_map[char] = count_map.get(char, 0) + 1
+    
+print(count_map)
+
+print(sum(list(count_map.values()))) # prints 3
 ```
 
 ### Creating a set

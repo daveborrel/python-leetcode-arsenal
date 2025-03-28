@@ -1,11 +1,20 @@
 # Just a random python file for any testing you might have
 # Think of this as replit
 
+# def minimum_window_substring(s, t):
+    
+#     start, end = 0, 0
+    
+#     while start < len(s):
+        
+s = "ABAACBAB" 
+t = "ABC"
 
-nums1 = [1,3]
+count_map = {}
 
-nums2 = [2]
+for char in t:
+    count_map[char] = count_map.get(char, 0) + 1
+    
+print(count_map)
 
-total_length = len(nums1) + len(nums2)
-
-# how do we combine these two arrays without using sort and not having a linked list?
+print(sum(list(count_map.values())))
