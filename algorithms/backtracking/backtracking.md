@@ -76,6 +76,38 @@ def CombinationBacktrack(index):
     CombinationBacktrack(index + 1)   # Move to next number
 ```
 
+### Combination Sum II
+
+- An extension of combination sum where we check for duplicates.
+
+```python
+class Solution:
+    def subsetsWithDup(self, nums: list[int]) -> list[list[int]]:
+        res = []
+        nums.sort()
+
+        def dfs(idx, path):  
+            res.append(path[::])        
+            
+            for i in range(idx, len(nums)):
+                if i > idx and nums[i] == nums[i - 1]:
+                    continue
+                path.append(nums[i])
+                dfs(i + 1, path)
+                path.pop()
+        
+        dfs(0, [])
+        return res
+```
+
+This line: `if i > idx and candidates[i] == candidates[i - 1]:` checks if the current candidate is a duplicate.
+
+This image illustrates the different recursion levels. Each recursion level will check subsets that can be formed with each "duplicate". 
+- One recursion level will have `path = [1]`, and another will have `path = [1,1]`
+
+![subsets2_image](/algorithms/backtracking/assets/subsets2.JPG)
+
+
 ### Generate Parenthesis
 
 - Two different counts here because it ensures that the string generated is valid.
@@ -98,42 +130,6 @@ def dfs(index):
         # add a close parenthesis to the current substring
         dfs(lc, rc + 1)
         # remove open parenthesis
-```
-
-### Combination Sum II
-
-- An extension of combination sum.
-- Need to cover the case of duplicate answers
-- Need to reduce the use of sum() and calculate the sum as you are traversing the different possibilities.
-
-Note on recursion
-- `if i > idx and candidates[i] == candidates[i - 1]:` 
-- The purpose of this line prevents duplicate numbers at the same recursion level
-    - recursion level 1 with `path = [1]`
-        - this will explore all combinations excluding `path = [1,1]` because we've already explored that in a deeper level
-    - recursion level 2 with `path = [1, 1]`
-        - we explore all possible combinations starting with `path = [1,1]`
-    - Even more context
-        - Lets say we had `candidates = [1,1,1,2,5,6,7]`
-        - This means that at recursion level 3, we'll have `path = [1,1,1]`
-            - so by the time we exit into recursion level 2, we'll skip out on `path = [1,1,1]` because its been done before.
-
-
-```python
-        def dfs(idx, path, cur):
-            if cur == target:
-                res.append(path.copy())
-                return
-            for i in range(idx, len(candidates)):
-                # checks if duplicate for that level of recursion.
-                if i > idx and candidates[i] == candidates[i - 1]:
-                    continue
-                if cur + candidates[i] > target:
-                    break
-
-                path.append(candidates[i])
-                dfs(i + 1, path, cur + candidates[i])
-                path.pop()
 ```
 
 ### Letter Combinations of a phone number
