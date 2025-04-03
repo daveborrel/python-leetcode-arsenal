@@ -76,7 +76,7 @@ def CombinationBacktrack(index):
     CombinationBacktrack(index + 1)   # Move to next number
 ```
 
-### Combination Sum II
+### Subsets II
 
 - An extension of combination sum where we check for duplicates.
 

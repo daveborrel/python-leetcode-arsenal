@@ -16,6 +16,15 @@ Its useful to use dummy nodes in this example because it covers a bunch of edge 
 
 This makes it easier to understand what the rest of the code is doing.
 
+### Add
+
+![image](/data_structures/linked_list/assets/lru_add.JPG)
+
+### Remove
+
+![image](/data_structures/linked_list/assets/lru_remove.JPG)
+
+
 ```python
 class ListNode:
     def __init__(self, key, val):

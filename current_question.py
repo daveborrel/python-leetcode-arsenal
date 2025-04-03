@@ -1,20 +1,12 @@
 # Just a random python file for any testing you might have
 # Think of this as replit
 
-# def minimum_window_substring(s, t):
-    
-#     start, end = 0, 0
-    
-#     while start < len(s):
-        
-s = "ABAACBAB" 
-t = "ABC"
+s = "leetcode"
 
-count_map = {}
+dp = [False] * (len(s) + 1)
 
-for char in t:
-    count_map[char] = count_map.get(char, 0) + 1
-    
-print(count_map)
+i = 4
+j = 0
 
-print(sum(list(count_map.values())))
+print("dp at index j is : " + str(dp[j]))
+print("s[j:i] is : " + s[j:i])
