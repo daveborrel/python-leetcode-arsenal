@@ -10,7 +10,7 @@ for i in range(N):
     adj_list.append([])
 ```
 
-### Sorted
+### Sorted Function on Lists
 
 - Returns the list in ascending order
 
@@ -23,6 +23,35 @@ print(x)
 
 # ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 ```
+
+### Sorted Function on Dictionaries
+
+The `sorted()` function will take in a second parameter called key, which is a function you can pass in to make comparisons with each element.
+
+For example, if you use - `lambda x: (-x[1], x[0])`
+
+For each element x, we'll sort them based on comparing the following:
+
+- `-x[1]` The count, we add a negative sign in order to reverse the default order
+- `x[0]` The letter value itself
+
+```python
+data = {
+    "a": 3,
+    "b": 3,
+    "f": 9
+}
+
+# Sort by values (descending) and then by keys (ascending)
+sorted_items = sorted(data.items(), key=lambda x: (-x[1], x[0]))
+
+# Convert back to dictionary if needed (Python 3.7+ preserves insertion order)
+sorted_dict = dict(sorted_items)
+
+print(sorted_items)  # List of tuples: [('f', 9), ('a', 3), ('b', 3)]
+print(sorted_dict)   # Dictionary: {'f': 9, 'a': 3, 'b': 3}
+```
+
 
 ### Counter
 
