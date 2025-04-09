@@ -365,3 +365,12 @@ print(res)
 ```python
 intersect = len(elems[i] & elems[j])
 ```
+
+### Getting STDIN
+
+- Each call to input will take a line from the STDIN
+- Using print() is essentially printing to STDOUT by default as well
+
+```python
+text = input()
+```
