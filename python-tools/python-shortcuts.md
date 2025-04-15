@@ -406,6 +406,8 @@ text = input()
 
 ### Python Reading and Writing to Files
 
+**Reading a file**
+
 ```python
 #open the file
 text_file = open('/Users/pankaj/abc.txt','r')
@@ -414,3 +416,16 @@ text_file = open('/Users/pankaj/abc.txt','r')
 line_list = text_file.readlines()
 ```
 
+**Writing to a file**
+
+```python
+# Appends to the file you opened
+f = open("demofile2.txt", "a")
+f.write("Now the file has more content!")
+f.close()
+
+# Overwrites the all the content
+f = open("demofile3.txt", "w")
+f.write("Woops! I have deleted the content!")
+f.close()
+```
