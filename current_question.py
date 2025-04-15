@@ -1,39 +1,19 @@
-# given s = "a?rt???"
-# turn this into the smallest palindrome possibe
+#open the file
+text_file = open('sample_http_requests.txt','r')
 
-class Solution:
+#get the list of line
+line_list = text_file.readlines()
+
+seen = {}
+
+for line in line_list:
     
-    def getSmallestPalindrome(self, s):
+    #split will seperate each request by the space
+    endpoint_used = line.split()[1]
+    
+    if endpoint_used not in seen:
+        seen[endpoint_used] = seen.get(endpoint_used, 0) + 1
+    else:
+        seen[endpoint_used] += 1
         
-        s_list = list(s)
-        
-        l, r = 0, len(s) - 1
-        
-        while l < r:
-            if s_list[l] == s_list[r]:
-                if s_list[l] == "?" and s_list[r] == "?":
-                    s_list[l] = "a"
-                    s_list[r] = "a"
-                else:
-                    continue
-            else:
-                if s_list[l] == "?":
-                    s_list[l] = s_list[r]
-                elif s[r] == "?":
-                    s_list[r] = s_list[l]
-                else:
-                    return str(-1)
-            l += 1
-            r -= 1
-        
-        return "".join(s_list)
-        
-# Solution
-sol = Solution()
-s = "a?rt???"
-res = sol.getSmallestPalindrome(s)
-print(res)
-
-s = "bzrt??h"
-res = sol.getSmallestPalindrome(s)
-print(res)
+print(seen)

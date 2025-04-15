@@ -403,3 +403,14 @@ intersect = len(elems[i] & elems[j])
 ```python
 text = input()
 ```
+
+### Python Reading and Writing to Files
+
+```python
+#open the file
+text_file = open('/Users/pankaj/abc.txt','r')
+
+#get the list of line
+line_list = text_file.readlines()
+```
+
