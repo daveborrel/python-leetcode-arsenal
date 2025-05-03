@@ -28,4 +28,3 @@ sys.stdin = io.StringIO(input_data)
 test_case = int(input())
 
 sum_of_squares(test_case)
-
