@@ -1,6 +1,6 @@
 s = "aaabccz"
 
-def find_non_repeating_char(s):
+def find_first_non_repeating_char(s):
     
     seen = {}
     
@@ -16,6 +16,6 @@ def find_non_repeating_char(s):
     # so we have to check the entire string and keep track of the solo
     # I think we can use a queue.
 
-res = find_non_repeating_char(s)
+res = find_first_non_repeating_char(s)
 
 print(res)
