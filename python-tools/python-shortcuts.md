@@ -52,7 +52,6 @@ print(sorted_items)  # List of tuples: [('f', 9), ('a', 3), ('b', 3)]
 print(sorted_dict)   # Dictionary: {'f': 9, 'a': 3, 'b': 3}
 ```
 
-
 ### Counter
 
 ```python
@@ -77,7 +76,7 @@ print(ord('a') - ord('a'))
 print(ord('a') - ord('a'))
 
 # 97
-# 0 
+# 0
 # 19
 ```
 
@@ -86,8 +85,8 @@ print(ord('a') - ord('a'))
 ```python
 s = "A man, a plan, a canal: Panama"
 
-s_removed = ''.join(filter(str.isalnum, s)) 
-# ''.join() puts the filtered characters back together // 
+s_removed = ''.join(filter(str.isalnum, s))
+# ''.join() puts the filtered characters back together //
 # filter(str.isalnum, s) keeps only alphanumeric characters from s //
 # str.isalnum is a builtin method of str, so it can be used directly //
 
@@ -100,7 +99,7 @@ print(s_lower) #amanaplanacanalpanama
 
 ```python
 res = (5 / 2)
-print(res) 
+print(res)
 # prints out 2.5 - which can result in floating number results
 
 res1 = (5 // 2)
@@ -168,7 +167,7 @@ count_map = {}
 
 for char in t:
     count_map[char] = count_map.get(char, 0) + 1
-    
+
 print(count_map)
 
 print(sum(list(count_map.values()))) # prints 3
@@ -228,7 +227,7 @@ print(s)    #[73, 74, 75, 71, 69, 72, 76]
 >>> a = ["foo", "bar", "baz"]
 >>> for i in reversed(a):
 ...     print(i)
-... 
+...
 baz
 bar
 foo
@@ -237,11 +236,11 @@ foo
 ### Going through a list in reverse order using range() function
 
 - range takes in three possible arguments
-    - start - where to start (inclusive)
-    - stop - where to end (exclusive)
-    - step - how much to increment/ decrement by
+  - start - where to start (inclusive)
+  - stop - where to end (exclusive)
+  - step - how much to increment/ decrement by
 
-``` python
+```python
 for i in range(n-1, -1, -1)
 ```
 
@@ -279,8 +278,8 @@ print("acbdefg".join)
 ```
 
 ### queues
-- deque stands for double-ended queue. 
 
+- deque stands for double-ended queue.
 
 ```python
 # to instantiate a queue
@@ -302,6 +301,7 @@ q.popleft()
 ```
 
 ### Splicing in Python
+
 - to begin, indexing is the process of accessing an element in a sequence using its position in the sequence.
 - Splicing, however, is the process of accessing a subsequence of a sequence by specifying a starting and ending index
 
@@ -350,6 +350,7 @@ However, we run into a special case when looking at negative numbers:
 -9 / 5 = ? (-1.8)
 
 Most programming languages will will either do one of the following
+
 - make it smaller by rounding to -2.
 - make it closer to 0.
 
@@ -368,7 +369,9 @@ print(-9 // 5)
 ```
 
 ### Lambda Functions
+
 [more detail here](/python-tools/lamdba-functions.md)
+
 ```python
 lambda x: x + 1
 ```
@@ -378,6 +381,7 @@ lambda x: x + 1
 - Takes two iterables (lists in most cases) and returns them in a single tuple.
 
 [more detail here](https://www.programiz.com/python-programming/methods/built-in/zip)
+
 ```python
 position = [10,8,0,5,3]
 speed = [2,4,1,1,3]
@@ -391,6 +395,7 @@ print(res)
 ```
 
 ### Set intersection
+
 ```python
 intersect = len(elems[i] & elems[j])
 ```
@@ -451,3 +456,12 @@ def is_valid_email(email_address):
 - `\.` literal period
 - `[a-zA-Z]{1,3}` - The extension has english letters and is 1-3 letters long
 - `$` end of the string
+
+### Using exponents in python
+
+If you want to use exponents, you must use a double star in order to calculate those values.
+
+```
+if -(2**31) <= val <= 2**31 - 1:
+    return val
+```
