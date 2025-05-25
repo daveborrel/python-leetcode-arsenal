@@ -465,3 +465,29 @@ If you want to use exponents, you must use a double star in order to calculate t
 if -(2**31) <= val <= 2**31 - 1:
     return val
 ```
+
+### **lt** magic method
+
+This **lt**() method determines whether or not one object is less than another. Useful for when objects are closely related.
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __lt__(self, other):
+        if isinstance(other, Point):
+             return (other.x, other.y) < (self.x, self.y)
+        raise TypeError("Both objects should be instances of Point")
+
+p1 = Point(3, 4)
+p2 = Point(1, 2)
+p3 = Point(3, 2)
+
+print(p1 < p2)
+print(p1 < p3)
+print(p2 < p3)
+
+#Raises an Error
+print(p1 < (1, 2))
+```
