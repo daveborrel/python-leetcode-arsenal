@@ -44,3 +44,42 @@ neighbors = a container to put the neighbors of (row, col) in
             add (neighbor_row, neighbor_col) to neighbors
     return neighbors
 ```
+
+### Common BFS Patterns in Questions
+
+- To ensure that all of the nodes in a specific level are checked, find the length of that level you're looking at.
+
+Example from this leetcode question
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+
+        res = []
+        q = deque([root])
+
+        # when doing questions that iterate through all the levels
+        while q:
+            level_length = len(q)
+
+            for i in range(level_length):
+                node = q.popleft()
+
+                if i == level_length - 1:
+                    res.append(node.val)
+
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+
+        return res
+```
